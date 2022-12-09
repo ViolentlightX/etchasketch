@@ -1,0 +1,78 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* border: solid; */
+    /* border-color: red; */
+}
+
+/* Themes */
+.darkTheme {
+    background-color: black;
+    color: white;
+}
+
+.lightTheme {
+    background-color: white;
+    color: black;
+}
+
+label {
+    text-align: center;
+}
+
+.header {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 5vh;;
+}
+
+.mainContainer {
+    display: flex;
+}
+
+.menuSettings {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 15vw;
+    margin: 2vw;
+}
+
+.mSetColorPick,
+.mSetSizePick,
+.mSetTheme {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.themeButtons {
+    display: flex;
+    padding-top: 10px;
+}
+
+#buttonSpacer {
+    width: 15px;
+}
+
+.menuButton {
+    width: 50px;
+    height: 30px;
+    border-radius: 20px;
+}
+
+.mainDrawArea {
+    margin: 20px;
+    width: 80vw;
+    height: 80vh;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+}
+.grid-item {
+    border: solid;
+    border-color: white;
+}
+
