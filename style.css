@@ -64,12 +64,12 @@ label {
     border-radius: 20px;
 }
 
-.mainDrawArea {
+#mainDrawArea {
     margin: 20px;
     width: 80vw;
     height: 80vh;
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(16, auto);
 }
 .grid-item {
     border: solid;
