@@ -1,23 +1,14 @@
 // Get grid size value. Display value. Return grid size value
 const setGridSize = () => {
     const userRangeSelect = document.querySelector("#sizeSlider");
-    const mainDrawArea = document.querySelector("#mainDrawArea");
-    const gridBlock = document.createElement("div");
-    gridBlock.classList.add('grid-item');
 
     userRangeSelect.addEventListener("input", e => {
         const rangeValueDisplay = document.querySelector(".gridSizeDisplayValue");
         const gridSize = e.target.value;
-
+        clearGrid();
         rangeValueDisplay.innerHTML = `${gridSize} X ${gridSize}`;
-
-        mainDrawArea.setAttribute("grid-template-columns", "repeat(" + gridSize + ", auto)");
-    
-        for (i = 0; i < gridSize ** 2; i++) {
-            mainDrawArea.append(gridBlock);
-        }
-    })
-    return e.target.value;
+        createGrid(gridSize);
+    });
 }
 
 // Get brush color from interface
@@ -27,6 +18,25 @@ const setBrushColor = () => {
     userColorSelect.addEventListener("input", e => {
         return e.target.value;
     })
+}
+
+const createGrid = (userValue) => {
+    const mainDrawArea = document.querySelector("#mainDrawArea");
+    const gridBlock = document.createElement("div");
+
+    mainDrawArea.style.gridTemplateColumns = `repeat(${userValue}, 1fr)`;
+    gridBlock.classList.add('grid-item');
+    // Generate the divs for the draw area
+    for (i = 0; i < userValue ** 2; i++) {
+        mainDrawArea.append(gridBlock);
+    }
+}
+
+const clearGrid = () => {
+    const gridDiv = document.getElementsByClassName("grid-item");
+    while(gridDiv.length > 0) {
+        gridDiv[0].parentNode.removeChild(gridDiv[0]);
+    }
 }
 
 setGridSize();
